@@ -1,0 +1,87 @@
+@dsm host koude.win www.koude.win
+handle @dsm {
+    reverse_proxy https://192.168.50.3:5001 {
+        import insecure_https_upstream
+    }
+}
+
+@portainer host portainer.koude.win
+handle @portainer {
+    reverse_proxy https://192.168.50.6:9443 {
+        import insecure_https_upstream
+    }
+}
+
+@router host router.koude.win
+handle @router {
+    reverse_proxy 192.168.50.1:8080
+}
+
+@rsshub host rsshub.koude.win
+handle @rsshub {
+    reverse_proxy 192.168.50.6:8001
+}
+
+@jellyfin host jellyfin.koude.win
+handle @jellyfin {
+    reverse_proxy 192.168.50.3:8096
+}
+
+@book host book.koude.win
+handle @book {
+    reverse_proxy 192.168.50.3:8083
+}
+
+@nastool host nastool.koude.win
+handle @nastool {
+    reverse_proxy 192.168.50.3:3000
+}
+
+@pdf host pdf.koude.win
+handle @pdf {
+    reverse_proxy 192.168.50.6:8080
+}
+
+@rss host rss.koude.win
+handle @rss {
+    reverse_proxy 192.168.50.6:8008
+}
+
+@webdav host webdav.koude.win
+handle @webdav {
+    reverse_proxy https://192.168.50.3:5006 {
+        import insecure_https_upstream
+    }
+}
+
+@alist host alist.koude.win
+handle @alist {
+    reverse_proxy 192.168.50.3:5244
+}
+
+@web_monitor host web.koude.win
+handle @web_monitor {
+    reverse_proxy 192.168.50.6:8200
+}
+
+@lucky host lucky.koude.win
+handle @lucky {
+    reverse_proxy 192.168.50.3:16601
+}
+
+@pass host pass.koude.win
+handle @pass {
+    reverse_proxy 192.168.50.3:8999
+}
+
+@openwrt host open.koude.win
+handle @openwrt {
+    reverse_proxy https://192.168.50.2 {
+        import insecure_https_upstream
+    }
+}
+
+@haos host haos.koude.win
+handle @haos {
+    reverse_proxy 192.168.50.4:8123
+}
