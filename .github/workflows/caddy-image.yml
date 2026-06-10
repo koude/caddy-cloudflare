@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - caddy-stack/Dockerfile
+      - caddy/Dockerfile
       - .github/workflows/caddy-image.yml
   workflow_dispatch:
   schedule:
@@ -51,8 +51,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-          context: ./caddy-stack
-          file: ./caddy-stack/Dockerfile
+          context: ./caddy
+          file: ./caddy/Dockerfile
           platforms: linux/amd64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
